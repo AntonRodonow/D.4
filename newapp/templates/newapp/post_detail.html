@@ -1,0 +1,47 @@
+{% extends 'flatpages/default.html' %}
+
+{% load censor_filters %}
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+    <table>
+        <thead>
+            <th>
+                Автор
+            </th>
+            <th>
+                Категория новости
+            </th>
+            <th>
+                Заголовок
+            </th>
+            <th>
+                Текст новости
+            </th>
+            <th>
+                Рейтинг новости
+            </th>
+
+        </thead>
+        <tr>
+            <td>
+                {{ new.author.authorUser }}
+            </td>
+            <td>
+                {{ new.categoryType }}
+            </td>
+            <td>
+                {{ new.title|censor }}
+            </td>
+            <td>
+                {{ new.text|censor }}
+            </td>
+            <td>
+                {{ new.rating }}
+            </td>
+        </tr>
+    </table>
+{% endblock content %}
